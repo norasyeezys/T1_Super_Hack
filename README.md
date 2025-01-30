@@ -8,7 +8,7 @@ The MacBook Pro is from the lineup of models with the T1 chip. As you know, the 
 
 Looked online, found a bunch of SPI EEPROM tutorials, etc etc.
 
-Tried Apple's official tools and had zero luck. T1 MacBook Pros don't have DFU, and just about every single recovery option failed.
+Tried Apple's official tools and had zero luck. I tried just about every single recovery method in the book. Nope, didn't work. I tried DFU... Wait... T1 MacBook Pros don't even have DFU.
 
 (Yeah, I've tried all of them. Didn't even show up in Apple Configurator 2)
 

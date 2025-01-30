@@ -30,7 +30,7 @@ I held the power button to drain the capacitance. Then I tried those same method
 
 Here's a quirk. When a MacBook Pro from this generation has a firmware lock and is running on charger only... You need to press the power button more than once to turn it on.
 
-Told my peer if they didn't mind the risk of bricking the laptop. They didn't. So I dug right in.
+Asked my peer if they didn't mind the risk of bricking the laptop. They didn't. So I dug right in.
 
 # Finding the EFI Module
 
@@ -47,3 +47,21 @@ If you don't know how to interpret IDs, here's a quick tip. R are Resistors, C a
 Next step. Where is Part U6100? That is where the boardview comes in.
 
 It was a .brd file. Which posed another issue. But then I found [OpenBoardView (Thanks a lot!)](https://github.com/OpenBoardView/OpenBoardView).
+
+Pulled up the chip's location on the board and...
+
+![I found the U6100 chip!](https://raw.githubusercontent.com/norasyeezys/T1_Super_Hack/refs/heads/main/images/Screenshot%20from%202025-01-29%2022-15-15.png)
+
+It's on the other side of the board. The one that isn't facing you when you first open up a MacBook Pro.
+
+Which means, I had to actually take the logic board out of the computer. Thankfully it's not too difficult, just need to remove like 20 screws and unplug as many connectors as possible.
+
+I will mention this. One of the connectors is glued onto the board. It's glued because it's attached to a hard part that sticks onto the board. Please try to take out that connector from the board when you unplug it. It is very small and fragile. It's called the "Mesa Connector" and it's really important since it has TouchID and especially because it connects to the button which is required to *TURN ON THE COMPUTER*. Learned it the hard way. So please don't try to break it. (Even though replacements are like 30$.)
+
+Alright, I removed the board.
+
+![Board Removal](https://raw.githubusercontent.com/norasyeezys/T1_Super_Hack/refs/heads/main/images/20250125_181623.jpg)
+
+(In the picture you can see the bendy thing at the top that connects to the battery that I mentioned earlier)
+
+Now it's time for me to find the chip on the actual board. Then the fun really begins.

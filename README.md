@@ -22,9 +22,9 @@ Alright, I pry this MacBook open. Look inside, and it looks like alien hardware.
 
 Okay. I admit. The original reason I did this was because the firmware lock was so invasive, I had my doubts I was actually turning the machine off.
 
-Apparently MacBook Pro batterys are connected to the motherboard by this bendy metal thing hidden below the covers.
+Apparently MacBook Pro batterys are connected to the motherboard by this bendy metal thing hidden below the covers. Not the typical plug n play commonly found in PCs.
 
-So I unscrewed that, and then finally removed the battery.
+So I unscrewed that, and then finally pulled away the battery plug.
 
 I held the power button to drain the capacitance. Then I tried those same methods as earlier with no luck (power on while holding random keys, unplug, drain capacitance, repeat).
 

@@ -33,3 +33,7 @@ Here's a quirk. When a MacBook Pro from this generation has a firmware lock and 
 Told my peer if they didn't mind the risk of bricking the laptop. They didn't. So I dug right in.
 
 # Finding the EFI Module
+
+Alright, so the game plan is to find the EFI chip, extract a BIOS dump, crack the firmware and reflash the BIOS. Sounds simple on paper, right? But there's a lot that needs to happen.
+
+First, I needed to find out where the EFI chip actually was. What did I do? I went on schematics and boardviews for the exact Mac Model.

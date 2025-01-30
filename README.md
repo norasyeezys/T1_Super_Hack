@@ -4,7 +4,7 @@ I have been requested not long ago to repair a laptop from e-waste for a peer. T
 
 This is the first time I have ever attempted to crack a firmware lock... and it was also one of the harder models to crack.
 
-The MacBook Pro is from the lineup of models with the T1 chip. Making it a difficult nut to crack.
+The MacBook Pro is from the lineup of models with the T1 chip. As you know, the T1 chip is a security chip made by Apple to handle Secure Boot, Touch ID, Apple Pay, etc. Part of the fuel of the fire which is Apple's closed ecosystem, which if you are familiar with Apple's methodology, is quite tight. Making it a difficult nut to crack.
 
 Looked online, found a bunch of SPI EEPROM tutorials, etc etc.
 

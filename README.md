@@ -64,4 +64,22 @@ Alright, I removed the board.
 
 (In the picture you can see the bendy thing at the top that connects to the battery that I mentioned earlier)
 
-Now it's time for me to find the chip on the actual board. Then the fun really begins.
+Now I have to find the chip on the actual board. This is easy since I had the boardview, schematics, and already taken the board out.
+
+It's right here.
+
+![There it is...](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250130_221456.jpg)
+
+You see it? It's the chip that says "Winbond 25Q64FVIQ". That's the EFI chip. It has 8 pins on the output as well.
+
+It checks out with what I saw in the schematic.
+
+Here's the pinout (it's basically the same for all models just the shape of the pins are different)
+
+![You're welcome](https://raw.githubusercontent.com/norasyeezys/T1_Super_Hack/refs/heads/main/images/Screenshot%20from%202025-01-30%2022-28-38.png)
+
+The fun part is about to commence...
+
+#BIOS Dumping Time, or is it?
+
+Recently got my SOIC8 chip clip in the mail. Also got a Raspberry Pi for me to do the actual BIOS flashing. (Will use a Pi that I already have, mind you.)

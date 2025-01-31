@@ -88,6 +88,14 @@ Alright, just need to map this pinout to that of my Raspberry Pi. The VCC pin ha
 
 Okay. MAYBE I could use a voltage divider to get exactly 3V for safety, but nah, screw it. Gonna use the 3.3 V output from the Raspberry Pi.
 
-Alright the Ground is easy. But the rest is gonna be a while to figure out.
+Alright the Ground is easy. But the rest is gonna be a while to figure out. (Just google raspberry pi pinout of whatever model you have)
 
 In the meantime, will install the necessary tools like flashrom on the Pi.
+
+But back to the chip clip! Make sure that the dot on the chip aligns with the colored wire, because the dot and colored wire both correspond to Pin 1, and they go counter clockwise the pins!
+
+![Chip Clip: Attached](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250130_224725.jpg)
+
+The chip clip is attached but I have my doubts I'm even doing this correctly. Look at the size difference between the chip clip's attachments and the chip. Might need mechanical adjustments to make this work. But let's see if this will do for now.
+
+Time for the BIOS dump! (if my setup actually works)

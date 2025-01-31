@@ -80,6 +80,14 @@ Here's the pinout (it's basically the same for all models just the shape of the 
 
 The fun part is about to commence...
 
-#BIOS Dumping Time, or is it?
+# BIOS Dumping Time, or is it?
 
 Recently got my SOIC8 chip clip in the mail. Also got a Raspberry Pi for me to do the actual BIOS flashing. (Will use a Pi that I already have, mind you.)
+
+Alright, just need to map this pinout to that of my Raspberry Pi. The VCC pin has a supply voltage range of –0.6 to 4.6V. The operating range is between 2.7 and 3 V for some frequencies, and 3 and 3.6 V for others. The datasheet says this is a 3V EFI chip. I have no clue what frequency I will use.
+
+Okay. MAYBE I could use a voltage divider to get exactly 3V for safety, but nah, screw it. Gonna use the 3.3 V output from the Raspberry Pi.
+
+Alright the Ground is easy. But the rest is gonna be a while to figure out.
+
+In the meantime, will install the necessary tools like flashrom on the Pi.

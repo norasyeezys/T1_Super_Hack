@@ -99,3 +99,15 @@ But back to the chip clip! Make sure that the dot on the chip aligns with the co
 The chip clip is attached but I have my doubts I'm even doing this correctly. Look at the size difference between the chip clip's attachments and the chip. Might need mechanical adjustments to make this work. But let's see if this will do for now.
 
 Time for the BIOS dump! (if my setup actually works)
+
+# Pre-Testing
+
+I'm sorry to surprise you. But before I use the MacBook, I tried a Thinkpad.
+
+I needed a quick way to test the system, and apparently I was able to dump the BIOS of an older Thinkpad using Raspberry Pi and flashrom.
+
+The chip topology of the Thinkpad's chip makes it easier. No need to solder unlike the Mac. However, I will try the Mac anyways just in case. It means,,, perhaps there is still hope after all.
+
+I quickly got the gist of BIOS firmware dumps (You have to do it like 4 or 5 times because the checksums may be different. Also pinouts are basically the same between different EFI chips.)
+
+# The Actual BIOS testing.

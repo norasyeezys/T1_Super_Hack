@@ -116,7 +116,7 @@ First of all, the chip clip did not connect to the chip. The pins of the chip we
 
 My next plan was to solder the tips of the chip clip for better grip on the chip. I soldered little spikes to the end. However, apparently this did not suffice.
 
-The next step was to actually remove the chip. What did I do? I used a hot air station (NOTE: PLEASE DONT TRY THIS AT HOME)
+The next step was to actually remove the chip. What did I do? I used a hot air station (NOTE: PLEASE DON'T TRY THIS AT HOME)
 
 After applying 200 degrees of hot air repeatedly to the chip (enough to melt like half the label), I was able to remove the chip.
 
@@ -128,7 +128,7 @@ But here's the issue.
 
 The PCB has been messed up... Also...
 
-The chip apparently was difficult to remove because of that big metal in the middle. It had a huge ground "belly" that made it difficult to put it on a breakout board the traditional way (Yes, we tried it, it slid on the breakout board), and needed an improvise.
+The chip apparently was difficult to remove because of that big metal in the middle. It had a huge ground "belly" that made it difficult to put it on a breakout board the traditional way (Yes, we tried it, it slid on the breakout board), and needed an improvise. (This is just Apple being apple, choosing a form factor that wasn't even in the official datasheet for that chip.)
 
 Honestly, I knew it was gonna be there from the boardviews, but I didn't know it was gonna be this big.
 
@@ -187,3 +187,13 @@ See y'all next time >:)
 Now here's the next step. The step actually involves reverse engineering the firmware in order to remove the BIOS lock. Before we get to that, let me point out some interesting observations about Apple firmware.
 
 First of all, there is Apple metadata all over it. One of the last lines is \__AAPL__ which you may recognize it as Apple's Stock initial.
+
+There's also this.
+
+![Firmware Info](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Screenshot%20from%202025-02-10%2015-17-17.png)
+
+Found way more interesting and cool stuff buried in the firmware dump just by typing ```strings bios_dump.bin``` into my terminal. I have pictures. But I don't want clutter the doc by sharing those here.
+
+It's time for the next step... a Hex Dump analysis.
+
+For the Hex Dump, I am using HxD on a Windows 7 laptop. Pretty old but gold tech. I do need to understand the dump and so I can find and clear the firmware lock in there. But first, I want to go on a little tech adventure.

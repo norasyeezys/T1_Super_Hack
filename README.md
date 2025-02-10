@@ -204,7 +204,7 @@ Here are some interesting things that I found.
 
 Here you can see the Device ID and the language the computer was set to... The latter isn't commonly found in BIOS Dumps.
 
-![Unique EFI Information](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Dump%20Info.png)
+![Unique EFI Information](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Dump%20Info%207.png)
 
 Here you can see the location of the boot.efi in the MacBook. Which allows the Mac to boot. There is also the part where the Audio / Video of the system is initialized.
 

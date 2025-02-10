@@ -210,6 +210,16 @@ Here you can see the location of the boot.efi in the MacBook. Which allows the M
 
 There is a lot more cool stuff I found here, like the initialization of NVRAM, NVMe Drive (which is Soldered into the logic board), and even stuff that you don't normally see in BIOS dumps like Device Name, known Wi-Fi networks, (these two things are most likely part of Apple's T1 Ecosystem) and much more.
 
-And yes... You see a lot of periods between letters, as in ```S.y.s.t.e.m``` In this type of Mac BIOS. It may be because of how the firmware is interpreted in the system, but I wouldn't be surprised if this was Apple's other attempt to lock things down further.
+And yes... You see a lot of periods between letters, as in ```S.y.s.t.e.m``` in this type of Mac BIOS. It may be because of how the firmware is interpreted in the system, but I wouldn't be surprised if this was Apple's other attempt to lock things down further.
+
+# Cracking the Password
 
 However, the goal is to crack the firmware password on Apple device, which has been done before. To do that we need to compare the hex files of locked and unlocked firmwares.
+
+I downloaded multiple samples of examples of cracked firmwares of MacBooks and then ran this command on them:
+
+```cmp -l firmware_locked.bin firmware_unlocked.bin  | awk '{printf "0x%08X 0x%02X 0x%02X\n", $1, strtonum("0x"$2), strtonum("0x"$3)}' > hex.txt```
+
+I also did this command for the two Lenovo Firmwares I extracted, since two of them had different SHA256 checksums. (The real vs the fake)
+
+I checked the first Hex Offset from the result of the Lenovo firmware comparison on both dumps (hex.txt). When I got to the offset in HxD on both firmwares, I realized the offset was off by 4 bits. Which is not bad at all.

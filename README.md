@@ -197,3 +197,19 @@ Found way more interesting and cool stuff buried in the firmware dump just by ty
 It's time for the next step... a Hex Dump analysis.
 
 For the Hex Dump, I am using HxD on a Windows 7 laptop. Pretty old but gold tech. I do need to understand the dump and so I can find and clear the firmware lock in there. But first, I want to go on a little tech adventure.
+
+Here are some interesting things that I found.
+
+![Metadata](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Dump%20Info.png)
+
+Here you can see the Device ID and the language the computer was set to... The latter isn't commonly found in BIOS Dumps.
+
+![Unique EFI Information](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Dump%20Info.png)
+
+Here you can see the location of the boot.efi in the MacBook. Which allows the Mac to boot. There is also the part where the Audio / Video of the system is initialized.
+
+There is a lot more cool stuff I found here, like the initialization of NVRAM, NVMe Drive (which is Soldered into the logic board), and even stuff that you don't normally see in BIOS dumps like Device Name, known Wi-Fi networks, (these two things are most likely part of Apple's T1 Ecosystem) and much more.
+
+And yes... You see a lot of periods between letters, as in ```S.y.s.t.e.m``` In this type of Mac BIOS. It may be because of how the firmware is interpreted in the system, but I wouldn't be surprised if this was Apple's other attempt to lock things down further.
+
+However, the goal is to crack the firmware password on Apple device, which has been done before. To do that we need to compare the hex files of locked and unlocked firmwares.

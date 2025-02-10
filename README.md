@@ -166,3 +166,20 @@ Apparently I found out about JTAG debugging and should have done that in hindsig
 
 It was time for me to dump the firmware.
 
+![First Firmware Dump](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/2025-02-09-055057_1280x800_scrot.png)
+
+Super happy with how it came out.
+
+I dumped the firmware 5 times in total.
+
+![More dumps and checksums](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/2025-02-09-055027_1280x800_scrot.png)
+
+It was miraculous. The checksums for all 5 dumps I did matched, and I dumped them with different speeds and configurations. I have attached two of them in the ```dumps``` folder here.
+
+By the way, the SHA256 Checksum of the Bios Dump is ```a999a4b807fa95844a6235fdbaa5203d7c2b604e10c0288e53d20c4df62ad21c``` if you do want to download the file.
+
+The next step will be a whole different game... to reverse engineer and redump the BIOS.
+
+See y'all next time >:)
+
+# Reverse Engineering the BIOS

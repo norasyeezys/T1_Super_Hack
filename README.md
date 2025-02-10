@@ -183,3 +183,7 @@ The next step will be a whole different game... to reverse engineer and redump t
 See y'all next time >:)
 
 # Reverse Engineering the BIOS
+
+Now here's the next step. The step actually involves reverse engineering the firmware in order to remove the BIOS lock. Before we get to that, let me point out some interesting observations about Apple firmware.
+
+First of all, there is Apple metadata all over it. One of the last lines is \__AAPL__ which you may recognize it as Apple's Stock initial.

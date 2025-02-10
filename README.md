@@ -100,7 +100,7 @@ The chip clip is attached but I have my doubts I'm even doing this correctly. Lo
 
 Time for the BIOS dump! (if my setup actually works)
 
-# Pre-Testing
+# Pre-Pre-Dump
 
 I'm sorry to surprise you. But before I use the MacBook, I tried a Thinkpad.
 
@@ -110,7 +110,7 @@ The chip topology of the Thinkpad's chip makes it easier. No need to solder unli
 
 I quickly got the gist of BIOS firmware dumps (You have to do it like 4 or 5 times because the checksums may be different. Also pinouts are basically the same between different EFI chips.)
 
-# The Actual BIOS testing
+# Pre-Dump
 
 First of all, the chip clip did not connect to the chip. The pins of the chip were too deep inside.
 
@@ -121,3 +121,48 @@ The next step was to actually remove the chip. What did I do? I used a hot air s
 After applying 200 degrees of hot air repeatedly to the chip (enough to melt like half the label), I was able to remove the chip.
 
 But here's the issue.
+
+![Is this repairable](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250209_153445.jpg)
+
+![Look closely](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250209_153810.jpg)
+
+The PCB has been messed up... Also...
+
+The chip apparently was difficult to remove because of that big metal in the middle. It had a huge ground "belly" that made it difficult to put it on a breakout board the traditional way (Yes, we tried it, it slid on the breakout board), and needed an improvise.
+
+Honestly, I knew it was gonna be there from the boardviews, but I didn't know it was gonna be this big.
+
+We soldered it into the breakout board upside down. (I used 'we' because I needed some help with such precise soldering, It was so difficult NOT to bridge something by accident)
+
+![Board ready to deploy](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250209_172841.jpg)
+
+I plugged it into the Raspberry Pi, trying to map the pinouts the best I could (since it was upside down it posed a bit of a challenge) using the datasheet. Then that part was completed. I was ready to dump the firmware. Or at least I thought...
+
+![Attached to the Pi](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250209_172838.jpg)
+
+I kept trying, changing the plugs, double checking everything. It wasn't working, and I was wondering why.
+
+I tried just about everything. I even thought I broke the chip. My heart nearly sunk in despair.
+
+Until...
+
+I took out the soldered breakout board and started to fiddle with the wires connecting it. I found a cold joint at the CLK pin (which is very important for SPI interfacing). I knew the chip worked since it was receiving power, but this was the issue.
+
+I quickly soldered the cold joint and then put the chip back in. In anticipation, I went to my Raspberry Pi and typed the command:
+
+```flashrom -p linux_spi:dev=/dev/spidev0.0```
+
+and the result?
+
+```Found Winbond flash chip "W25Q64.V" (8192 kB, SPI) on linux_spi.```
+
+The moment of truth has arrived.
+
+# Disclaimer
+
+Apparently I found out about JTAG debugging and should have done that in hindsight, but JTAG debuggers are expensive and hard to source. If you can source a JTAG debugger it means you don't have to solder or work with really hot stuff. Plus, chances are it's much easier if you come from a software background.
+
+# The Moment of Truth
+
+It was time for me to dump the firmware.
+

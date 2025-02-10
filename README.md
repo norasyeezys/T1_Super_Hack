@@ -110,4 +110,14 @@ The chip topology of the Thinkpad's chip makes it easier. No need to solder unli
 
 I quickly got the gist of BIOS firmware dumps (You have to do it like 4 or 5 times because the checksums may be different. Also pinouts are basically the same between different EFI chips.)
 
-# The Actual BIOS testing.
+# The Actual BIOS testing
+
+First of all, the chip clip did not connect to the chip. The pins of the chip were too deep inside.
+
+My next plan was to solder the tips of the chip clip for better grip on the chip. I soldered little spikes to the end. However, apparently this did not suffice.
+
+The next step was to actually remove the chip. What did I do? I used a hot air station (NOTE: PLEASE DONT TRY THIS AT HOME)
+
+After applying 200 degrees of hot air repeatedly to the chip (enough to melt like half the label), I was able to remove the chip.
+
+But here's the issue.

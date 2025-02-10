@@ -222,4 +222,8 @@ I downloaded multiple samples of examples of cracked firmwares of MacBooks and t
 
 I also did this command for the two Lenovo Firmwares I extracted, since two of them had different SHA256 checksums. (The real vs the fake)
 
-I checked the first Hex Offset from the result of the Lenovo firmware comparison on both dumps (hex.txt). When I got to the offset in HxD on both firmwares, I realized the offset was off by 4 bits. Which is not bad at all.
+I checked the first Hex Offset from the result of the Lenovo firmware comparison on both dumps (hex.txt). When I got to the offset in HxD on both firmwares, I realized the offset produced by the Linux command was off by 4 bits. Which is not bad at all.
+
+![Spot the Difference](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Differences_In_Code.gif)
+
+Now it's time for me to do this with the MacBook locked and unlocked firmwares, so I can find where is the password on my firmware.

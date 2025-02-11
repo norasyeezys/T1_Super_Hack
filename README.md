@@ -220,10 +220,17 @@ I downloaded multiple samples of examples of cracked firmwares of MacBooks and t
 
 ```cmp -l firmware_locked.bin firmware_unlocked.bin  | awk '{printf "0x%08X 0x%02X 0x%02X\n", $1, strtonum("0x"$2), strtonum("0x"$3)}' > hex.txt```
 
-I also did this command for the two Lenovo Firmwares I extracted, since two of them had different SHA256 checksums. (The real vs the fake)
+I also did this command for the two Thinkpad Firmwares I extracted, since two of them had different SHA256 checksums. (The real vs the fake)
 
 I checked the first Hex Offset from the result of the Lenovo firmware comparison on both dumps (hex.txt). When I got to the offset in HxD on both firmwares, I realized the offset produced by the Linux command was off by 4 bits. Which is not bad at all.
 
-![Spot the Difference](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Differences_In_Code.gif)
+![Spot the Fake One](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Differences_In_Code.gif)
 
 Now it's time for me to do this with the MacBook locked and unlocked firmwares, so I can find where is the password on my firmware.
+
+After exploring MacBook Firmware Dumps and the password locations, I have found the hex offset of the Firmware lock.
+
+The firmware lock is at around position 0x0015B05X (Row 0015B050 in HxD). In the text it should begin with ```$SVS°```
+
+The next step is to clear what comes afterward with F's in Hex. The question is. How much after the $SVS should I start clearing, and when should I end? Because the start of the clearing is different on every firmware dump. But based on the information I am seeing, the Unique data starts at 0x0015B080 (beginning of Row 0015B080) so I will probably clear starting there. I will also double check if there are more places I should clear, because that row is the first place to clear.
+ HH

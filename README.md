@@ -210,7 +210,7 @@ Here you can see the location of the boot.efi in the MacBook. Which allows the M
 
 There is a lot more cool stuff I found here, like the initialization of NVRAM, NVMe Drive (which is Soldered into the logic board), and even stuff that you don't normally see in BIOS dumps like Device Name, known Wi-Fi networks, (these two things are most likely part of Apple's T1 Ecosystem) and much more.
 
-And yes... You see a lot of periods between letters, as in ```S.y.s.t.e.m``` in this type of Mac BIOS. It may be because of how the firmware is interpreted in the system, but I wouldn't be surprised if this was Apple's other attempt to lock things down further.
+And yes... You see a lot of periods between letters, as in ```S.y.s.t.e.m``` in this type of Mac BIOS. They are actually not periods but null characters. It may be because of how the firmware is interpreted in the system, but I wouldn't be surprised if this was Apple's other attempt to lock things down further.
 
 # Cracking the Password
 
@@ -235,3 +235,13 @@ The firmware lock is at around position 0x0015B05X (Row 0015B050 in HxD). In the
 The next step is to clear what comes afterward with F's in Hex. The question is. How much after the $SVS should I start clearing, and when should I end? Because the start of the clearing is different on every firmware dump. But based on the information I am seeing, the Unique data starts at 0x0015B080 (beginning of Row 0015B080) so I will probably clear starting there. I will also double check if there are more places I should clear, because that row is the first place to clear.
 
 Did the math, one of the dumps has cleared 0x125A bytes. One of the dumps has cleared 0x800 bytes. Another dump has cleared 0xC28 bytes. For safety, I will clear 0x800 bytes (this is 2048 in decimal). It means I will end the clear at 0x15B880.
+
+![Interesting Sequence...](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Password%20Decrypt.png)
+
+Here's something interesting. Immediately after the $SVS, while clearing the password, and even after my clearing, I keep seeing this repeated sequence of characters: ªU|���€"��� ���^§öUpN´§·¥·Xê__XXXX__ (The last four digits are four random bits.) I wonder if this is how the firmware password is encrypted, and how do I decrypt it. I am considering getting a T1 Mac and firmware locking it with an easy password just so I can decipher the code ;)
+
+At the end of the sequence appears "M.e.m.o.r.y.C.o.n.f.i.g.H.a.s.h." and then a whole blank. That's another interesting thing.
+
+Well... I hope that clearing was enough. Because the next step is to verify and then flash the modified firmware back into the chip.
+
+# Verification

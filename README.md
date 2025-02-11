@@ -18,7 +18,7 @@ Decided instead to do a BIOS dump and reverse engineer the BIOS myself.
 
 Alright, I pry this MacBook open. Look inside, and it looks like alien hardware. Completely unlike what I am used to working with (Mostly older PCs)
 
-![The Insides of a MacBook Pro, isn't it lovely (a lovely nightmare)](https://raw.githubusercontent.com/norasyeezys/T1_Super_Hack/refs/heads/main/images/20250124_232410.jpg)
+![The Insides of a MacBook Pro, isn't it lovely (a lovely nightmare)](images/20250124_232410.jpg)
 
 Okay. I admit. The original reason I did this was because the firmware lock was so invasive, I had my doubts I was actually turning the machine off.
 

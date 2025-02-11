@@ -238,7 +238,7 @@ Did the math, one of the dumps has cleared 0x125A bytes. One of the dumps has cl
 
 ![Interesting Sequence...](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Password%20Decrypt.png)
 
-Here's something interesting. Immediately after the $SVS, while clearing the password, and even after my clearing, I keep seeing this repeated sequence of characters: ªU|���€"��� ���^§öUpN´§·¥·Xê__XXXX__ (The last four digits are four random bits.) I wonder if this is how the firmware password is encrypted, and how do I decrypt it. I am considering getting a T1 Mac and firmware locking it with an easy password just so I can decipher the code ;)
+Here's something interesting. Immediately after the $SVS, while clearing the password, and even after my clearing, I keep seeing this repeated sequence of characters: ªU|���€"��� ���^§öUpN´§·¥·Xê*XXXX* (The last four digits are four random bits.) I wonder if this is how the firmware password is encrypted, and how do I decrypt it. I am considering getting a T1 Mac and firmware locking it with an easy password just so I can decipher the code ;)
 
 At the end of the sequence appears "M.e.m.o.r.y.C.o.n.f.i.g.H.a.s.h." and then a whole blank. That's another interesting thing.
 

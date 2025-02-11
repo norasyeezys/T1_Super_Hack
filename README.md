@@ -245,3 +245,9 @@ At the end of the sequence appears "M.e.m.o.r.y.C.o.n.f.i.g.H.a.s.h." and then a
 Well... I hope that clearing was enough. Because the next step is to verify and then flash the modified firmware back into the chip.
 
 # Verification
+
+Quick skim thru the file by cmp... Looks like I didn't accidentally change anything stupid. The sha256 checksum did change though, which is to be expected. I also noticed I cleared less bytes than I anticipated. I did 1936 instead of 2048. Oh yeah... That's because I made the mistake of stopping at *0x15B810* instead of 0x15B880. It should... be fine though.
+
+The final phase is to inject the modified firmware into the chip. Then test it. Thankfully injecting is the easy part.
+
+# Reflashing the firmware

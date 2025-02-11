@@ -233,4 +233,5 @@ After exploring MacBook Firmware Dumps and the password locations, I have found 
 The firmware lock is at around position 0x0015B05X (Row 0015B050 in HxD). In the text it should begin with ```$SVS°```
 
 The next step is to clear what comes afterward with F's in Hex. The question is. How much after the $SVS should I start clearing, and when should I end? Because the start of the clearing is different on every firmware dump. But based on the information I am seeing, the Unique data starts at 0x0015B080 (beginning of Row 0015B080) so I will probably clear starting there. I will also double check if there are more places I should clear, because that row is the first place to clear.
- HH
+
+Did the math, one of the dumps has cleared 0x125A bytes. One of the dumps has cleared 0x800 bytes. Another dump has cleared 0xC28 bytes. For safety, I will clear 0x800 bytes (this is 2048 in decimal). It means I will end the clear at 0x15B880.

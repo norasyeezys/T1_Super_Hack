@@ -38,7 +38,7 @@ Alright, so the game plan is to find the EFI chip, extract a BIOS dump, crack th
 
 First, I needed to find out where the EFI chip actually was. What did I do? I went on schematics and boardviews for the exact Mac Model.
 
-![I found the chip ID!](https://raw.githubusercontent.com/norasyeezys/T1_Super_Hack/refs/heads/main/images/Screenshot%20from%202025-01-29%2022-03-22.png)
+![I found the chip ID!](images/Screenshot%20from%202025-01-29%2022-03-22.png)
 
 A glimpse at the blueprints (Just did Ctrl+F for "EFI") and we found the Part ID of chip. The ID is U6100.
 
@@ -50,7 +50,7 @@ It was a .brd file. Which posed another issue. But then I found [OpenBoardView (
 
 Pulled up the chip's location on the board and...
 
-![I found the U6100 chip!](https://raw.githubusercontent.com/norasyeezys/T1_Super_Hack/refs/heads/main/images/Screenshot%20from%202025-01-29%2022-15-15.png)
+![I found the U6100 chip!](images/Screenshot%20from%202025-01-29%2022-15-15.png)
 
 It's on the other side of the board. The one that isn't facing you when you first open up a MacBook Pro.
 
@@ -60,7 +60,7 @@ I will mention this. One of the connectors is glued onto the board. It's glued b
 
 Alright, I removed the board.
 
-![Board Removal](https://raw.githubusercontent.com/norasyeezys/T1_Super_Hack/refs/heads/main/images/20250125_181623.jpg)
+![Board Removal](images/20250125_181623.jpg)
 
 (In the picture you can see the bendy thing at the top that connects to the battery that I mentioned earlier)
 
@@ -76,7 +76,7 @@ It checks out with what I saw in the schematic.
 
 Here's the pinout (it's basically the same for all models just the shape of the pins are different)
 
-![You're welcome](https://raw.githubusercontent.com/norasyeezys/T1_Super_Hack/refs/heads/main/images/Screenshot%20from%202025-01-30%2022-28-38.png)
+![You're welcome](images/Screenshot%20from%202025-01-30%2022-28-38.png)
 
 The fun part is about to commence...
 

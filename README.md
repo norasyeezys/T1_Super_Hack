@@ -68,7 +68,7 @@ Now I have to find the chip on the actual board. This is easy since I had the bo
 
 It's right here.
 
-![There it is...](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250130_221456.jpg)
+![There it is...](images/20250130_221456.jpg)
 
 You see it? It's the chip that says "Winbond 25Q64FVIQ". That's the EFI chip. It has 8 pins on the output as well.
 
@@ -94,7 +94,7 @@ In the meantime, will install the necessary tools like flashrom on the Pi.
 
 But back to the chip clip! Make sure that the dot on the chip aligns with the colored wire, because the dot and colored wire both correspond to Pin 1, and they go counter clockwise the pins!
 
-![Chip Clip: Attached](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250130_224725.jpg)
+![Chip Clip: Attached](images/20250130_224725.jpg)
 
 The chip clip is attached but I have my doubts I'm even doing this correctly. Look at the size difference between the chip clip's attachments and the chip. Might need mechanical adjustments to make this work. But let's see if this will do for now.
 
@@ -122,9 +122,9 @@ After applying 200 degrees of hot air repeatedly to the chip (enough to melt lik
 
 But here's the issue.
 
-![Is this repairable](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250209_153445.jpg)
+![Is this repairable](images/20250209_153445.jpg)
 
-![Look closely](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250209_153810.jpg)
+![Look closely](images/20250209_153810.jpg)
 
 The PCB has been messed up... Also...
 
@@ -134,11 +134,11 @@ Honestly, I knew it was gonna be there from the boardviews, but I didn't know it
 
 We soldered it into the breakout board upside down. (I used 'we' because I needed some help with such precise soldering, It was so difficult NOT to bridge something by accident)
 
-![Board ready to deploy](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250209_172841.jpg)
+![Board ready to deploy](images/20250209_172841.jpg)
 
 I plugged it into the Raspberry Pi, trying to map the pinouts the best I could (since it was upside down it posed a bit of a challenge) using the datasheet. Then that part was completed. I was ready to dump the firmware. Or at least I thought...
 
-![Attached to the Pi](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/20250209_172838.jpg)
+![Attached to the Pi](images/20250209_172838.jpg)
 
 I kept trying, changing the plugs, double checking everything. It wasn't working, and I was wondering why.
 
@@ -166,13 +166,13 @@ Apparently I found out about JTAG debugging and should have done that in hindsig
 
 It was time for me to dump the firmware.
 
-![First Firmware Dump](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/2025-02-09-055057_1280x800_scrot.png)
+![First Firmware Dump](images/2025-02-09-055057_1280x800_scrot.png)
 
 Super happy with how it came out.
 
 I dumped the firmware 5 times in total.
 
-![More dumps and checksums](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/2025-02-09-055027_1280x800_scrot.png)
+![More dumps and checksums](images/2025-02-09-055027_1280x800_scrot.png)
 
 It was miraculous. The checksums for all 5 dumps I did matched, and I dumped them with different speeds and configurations. I have attached two of them in the ```dumps``` folder here.
 
@@ -190,7 +190,7 @@ First of all, there is Apple metadata all over it. One of the last lines is \__A
 
 There's also this.
 
-![Firmware Info](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Screenshot%20from%202025-02-10%2015-17-17.png)
+![Firmware Info](images/Screenshot%20from%202025-02-10%2015-17-17.png)
 
 Found way more interesting and cool stuff buried in the firmware dump just by typing ```strings bios_dump.bin``` into my terminal. I have pictures. But I don't want clutter the doc by sharing those here.
 
@@ -200,11 +200,11 @@ For the Hex Dump, I am using HxD on a Windows 7 laptop. Pretty old but gold tech
 
 Here are some interesting things that I found.
 
-![Metadata](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Dump%20Info.png)
+![Metadata](images/Dump%20Info.png)
 
 Here you can see the Device ID and the language the computer was set to... The latter isn't commonly found in BIOS Dumps.
 
-![Unique EFI Information](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Dump%20Info%207.png)
+![Unique EFI Information](images/Dump%20Info%207.png)
 
 Here you can see the location of the boot.efi in the MacBook. Which allows the Mac to boot. There is also the part where the Audio / Video of the system is initialized.
 
@@ -224,7 +224,7 @@ I also did this command for the two Thinkpad Firmwares I extracted, since two of
 
 I checked the first Hex Offset from the result of the Lenovo firmware comparison on both dumps (hex.txt). When I got to the offset in HxD on both firmwares, I realized the offset produced by the Linux command was off by 4 bits. Which is not bad at all.
 
-![Spot the Fake One](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Differences_In_Code.gif)
+![Spot the Fake One](images/Differences_In_Code.gif)
 
 Now it's time for me to do this with the MacBook locked and unlocked firmwares, so I can find where is the password on my firmware.
 
@@ -236,7 +236,7 @@ The next step is to clear what comes afterward with F's in Hex. The question is.
 
 Did the math, one of the dumps has cleared 0x125A bytes. One of the dumps has cleared 0x800 bytes. Another dump has cleared 0xC28 bytes. For safety, I will clear 0x800 bytes (this is 2048 in decimal). It means I will end the clear at 0x15B880.
 
-![Interesting Sequence...](https://github.com/norasyeezys/T1_Super_Hack/blob/main/images/Password%20Decrypt.png)
+![Interesting Sequence...](images/Password%20Decrypt.png)
 
 Here's something interesting. Immediately after the $SVS, while clearing the password, and even after my clearing, I keep seeing this repeated sequence of characters: ªU|���€"��� ���^§öUpN´§·¥·Xê*XXXX* (The last four digits are four random bits.) I wonder if this is how the firmware password is encrypted, and how do I decrypt it. I am considering getting a T1 Mac and firmware locking it with an easy password just so I can decipher the code ;)
 
@@ -251,3 +251,17 @@ Quick skim thru the file by cmp... Looks like I didn't accidentally change anyth
 The final phase is to inject the modified firmware into the chip. Then test it. Thankfully injecting is the easy part.
 
 # Reflashing the firmware
+
+Reflashing was surprisingly easy. All I had to do was verify the checksum and the changes made between the two files, whcih I moved via USB stick. From there I could easily plug the Winbond chip back to the board and reflash the modified BIOS.
+
+It didn't give me an error when verifying (during the tests with the Thinkpad, it did) with is great! So it looks like I'm almost ready for the next step, which is another challenge of its own.
+
+# Testing the firmware
+
+The moment has arrived! It's time to test the firmware! But the question is, how do we do that?
+
+Here's a catch: I cannot solder the chip back into the motherboard directly. Why? Because if the MacBook Pro is bricked, I will have to go through the hastle of resoldering the chip back into the board. Then having to fix the firmware AGAIN... Or I might even give up.
+
+So here's my idea: I'll solder tiny wires to the logic board contacts. Then connect them to wires that connect to the EFI chip (still on the mount). Very carefully put the logic board back and plug in all essential peripherals. Plug in the macbook and turn it on. Pray.
+
+The next step is to actually do it, which I will. As soon as I get the logic board and MacBook again.

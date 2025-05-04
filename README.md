@@ -178,6 +178,13 @@ It was miraculous. The checksums for all 5 dumps I did matched, and I dumped the
 
 By the way, the SHA256 Checksum of the Bios Dump is ```a999a4b807fa95844a6235fdbaa5203d7c2b604e10c0288e53d20c4df62ad21c``` if you do want to download the file.
 
+Wanna do it quick? Just copy and paste this:
+
+`for i in {1..5}; do
+  flashrom -p linux_spi:dev=/dev/spidev0.0 -r dump$i.bin
+  sha256sum dump$i.bin
+done`
+
 The next step will be a whole different game... to reverse engineer and redump the BIOS.
 
 See y'all next time >:)

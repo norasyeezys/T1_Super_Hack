@@ -180,10 +180,10 @@ By the way, the SHA256 Checksum of the Bios Dump is ```a999a4b807fa95844a6235fdb
 
 Wanna do it quick? Just copy and paste this:
 
-`for i in {1..5}; do
+``for i in {1..5}; do
   flashrom -p linux_spi:dev=/dev/spidev0.0 -r dump$i.bin
   sha256sum dump$i.bin
-done`
+done``
 
 The next step will be a whole different game... to reverse engineer and redump the BIOS.
 

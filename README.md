@@ -120,6 +120,8 @@ The next step was to actually remove the chip. What did I do? I used a hot air s
 
 After applying 200 degrees of hot air repeatedly to the chip (enough to melt like half the label), I was able to remove the chip.
 
+[Note: In hindsight I should have gone with a higher temp (say 270-300 degrees). It would take less time and also reduce the risk of tearing pads.]
+
 But here's the issue.
 
 ![Is this repairable](images/20250209_153445.jpg)
